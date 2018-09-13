@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+<title>stream history</title>
+<h1>stream history</h1>
+
+<h2>date</h2>
+<div id="dates">Loading</div>
+
+<h2>events for date <span id="selectedDate">None</span></h2>
+<div id="events" style="display:flex;flex-wrap:wrap"></div>
+
+
+
+<!-- Rakenduse kood mida laadida -->
+<script src="app.js"></script>
+
+<!-- Boostrap -->
+<script>
+async function Loaded() {
+  console.info("Starting App");
+  try {
+    let app = new App();
+    window.app = app;  // for easy debuging
+  } catch (e) {
+    console.error(e);
+    alert("App start failed:\n  " + e + "\nPress F12 and check the console!");
+  }
+  console.info("Started App");
+}
+document.addEventListener("DOMContentLoaded", Loaded);
+</script>
+
+</html>
+
