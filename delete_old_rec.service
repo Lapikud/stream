@@ -1,0 +1,6 @@
+[Unit]
+Description=Delete old camera recordings
+
+[Service]
+ExecStart=/usr/bin/find /srv/http/rec/event/ -mtime +30 -delete
+

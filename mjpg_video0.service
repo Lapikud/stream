@@ -1,0 +1,9 @@
+[Unit]
+Description=video0 mjpg streamer on port 8888
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/mjpg_streamer -i "input_uvc.so --yuv -d /dev/video0 -r 320x240" -o "output_http.so -w /usr/share/mjpeg-streamer/www/ -p 8888 -n"
+
+[Install]
+WantedBy=multi-user.target
